@@ -1,0 +1,8 @@
+/*================ Spacing ================*/
+@function spacing($type: base) {
+  $fetched-value: get-list-value($spacing-data, $type);
+
+  @if type-of($fetched-value) == number {
+    @return rem($fetched-value);
+  }
+}

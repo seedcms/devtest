@@ -1,0 +1,27 @@
+<section class="homepage-collection">
+  <ul class="homepage-collection__products">
+    {% for product in collections['all'].products %}
+      <li class="homepage-collection__product">
+        {% include 'product-card' %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+<div class="remodal" data-remodal-id="product-remodal">
+  <div class="remodal-close" data-remodal-action="close"></div>
+  <div class="remodal-content">
+    
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage Collection",
+    "presets": [
+      {
+        "name": "Homepage Collection",
+        "category": "Homepage"
+      }
+    ]
+  }
+{% endschema %} 

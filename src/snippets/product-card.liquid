@@ -1,0 +1,15 @@
+<div class="product__card">
+  <a class="product-card__image">
+    {% include 'lazy-image', image: product.image %}
+  </a>
+  <div class="product-card__details">
+    <h1 class="product-card__title">{{product.title}}</h1>
+    <span>{{product.price | money }}</span>
+  </div>
+  <select name="product-card__variants" id="{{product.handle}}-variants" class="product-card__variants">
+    {% for variant in product.variants %}
+      <option value="{{variant.id}}">{{variant.title}}</option>
+    {% endfor %}
+  </select>
+  <script type="application/json" data-productcard-json>{{ product | json }}</script>
+</div>

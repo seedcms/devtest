@@ -1,0 +1,138 @@
+/*================ Color Variables ================*/
+// CUSTOM COLOR VARIABLES
+// Text colors
+$color-body-text: #000 !default;
+
+// Backgrounds
+$color-body: #fff;
+
+// Border colors
+$color-border: #f6f6f6;
+
+// Helper colors for form error states
+$color-disabled: #eee;
+$color-disabled-border: #ccc;
+$color-error: #e74c3c;
+$color-error-bg: #c0392b;
+$color-success: #2ecc71;
+$color-success-bg: #27ae60;
+
+/*================ Typography Variables ================*/
+$font-family-data: (
+  'body' Roboto,
+  'header' Roboto
+);
+
+$font-weight-data: (
+  'thin' 100,
+  'extra-light' 200,
+  'light' 300,
+  'normal' 400,
+  'medium' 500,
+  'semi-bold' 600,
+  'bold' 700,
+  'extra-bold' 800,
+  'black' 900
+);
+
+$font-size-data: (
+  'base' rem(16px),
+  'large' rem(32px)
+);
+
+$line-height-data: (
+  'xs' 1,
+  'small' 1,
+  'normal' 1,
+  'medium' 1,
+  'large' 1,
+  'xl' 1,
+  'h1' 1,
+  'h2' 1,
+  'h3' 1,
+  'h4' 1,
+  'h5' 1,
+  'h6' 1
+);
+
+$font-size-base: font-size(base);
+
+$font-weight-normal: font-weight(normal);
+$font-weight-bold: font-weight(bold);
+$font-weight-header: font-weight(bold);
+
+$font-stack-header: font-family(header);
+$font-stack-body: font-family(body);
+
+/*============================================================================
+  Grid Breakpoints and Class Names
+    - Do not change the variable names
+==============================================================================*/
+$grid-small: 480px;
+$grid-medium: 768px;
+$grid-large: 1024px;
+$grid-widescreen: 1280px;
+
+$xs: 'xs';                        // 0 ~ 479
+$small-up: 'small-up';            // 480 ~ ...
+$small: 'small';                  // 480 ~ 767
+$small-down: 'small-down';        // 0 ~ 767
+$medium-up: 'medium-up';          // 768 ~ ...
+$medium: 'medium';                // 768 ~ 1024
+$medium-down: 'medium-down';      // 0 ~ 1023
+$large-up: 'large-up';            // 1024 ~ ...
+$large: 'large';                  // 1024 ~ 1279
+$large-down: 'large-down';        // 0 ~ 1279
+$medium-large: 'medium-large';    // 768 ~ 1279
+$widescreen: 'widescreen';        // 1280 ~ ...
+$desktop: $large-up;
+
+// The `$breakpoints` list is used to build our media queries.
+// You can use these in the media-query mixin.
+
+$breakpoints: (
+  $xs '(max-width: #{breakpoint($grid-small, -1px)})',
+  $small-up '(min-width: #{breakpoint($grid-small)})',
+  $small '(min-width: #{breakpoint($grid-small)}) and (max-width: #{breakpoint($grid-medium, -1px)})',
+  $small-down '(max-width: #{breakpoint($grid-medium, -1px)})',
+  $medium-up '(min-width: #{breakpoint($grid-medium)})',
+  $medium '(min-width: #{breakpoint($grid-medium)}) and (max-width: #{breakpoint($grid-large, -1px)})',
+  $medium-down '(max-width: #{breakpoint($grid-large, -1px)})',
+  $large-up '(min-width: #{breakpoint($grid-large)})',
+  $large '(min-width: #{breakpoint($grid-large)}) and (max-width: #{breakpoint($grid-widescreen, -1px)})',
+  $large-down '(max-width: #{breakpoint($grid-widescreen, -1px)})',
+  $medium-large '(min-width: #{breakpoint($grid-medium)}) and (max-width: #{breakpoint($grid-widescreen, -1px)})',
+  $widescreen '(min-width: #{breakpoint($grid-widescreen)})'
+);
+
+/*============================================================================
+  Generate breakpoint-specific column widths and push classes
+    - Default column widths: $breakpoint-has-widths: ($small, $medium-up);
+    - Default is no push classes
+    - Will not work if `styles/global/grid.scss` is removed
+==============================================================================*/
+$breakpoint-has-widths: ($small, $medium-up);
+$breakpoint-has-push: ();
+/*================ Spacing Variables ================*/
+$spacing-unit: 40px;
+
+$spacing-data: (
+  'super-tight' round($spacing-unit/4),
+  'extra-tight' round($spacing-unit/3),
+  'tight' round($spacing-unit/2),
+  'base' $spacing-unit,
+  'loose' round($spacing-unit*1.5),
+  'extra-loose' $spacing-unit*2,
+  'super-loose' $spacing-unit*3
+);
+
+/*================ Sizing Variables ================*/
+$width-site: rem(1280px);
+
+/*================ Z-Index ================*/
+$z-index-dropdown: 2;
+$z-index-drawer: 3;
+$z-index-skip-to-content: 10000; // really high to be safe of app markup
+
+/*================ SVG ================*/
+$svg-select-icon: #{'{{ "ico-select.svg" | asset_url }}'};

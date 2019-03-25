@@ -1,0 +1,32 @@
+.homepage-collection__products{
+  @include display-flexbox();
+  @include flex-wrap(wrap);
+  @include align-items(center);
+  width: 100%;
+  max-width: $width-site;
+  margin: 0 auto;
+  list-style-type: none;
+  padding: 0 spacing(super-tight);
+}
+
+.homepage-collection__product{
+  width: 100%;
+  padding: 0 spacing(super-tight);
+  margin-bottom: spacing(tight);
+
+  @include media-query($small-up) {
+    width: 50%;
+  }
+
+  @include media-query($medium-up) {
+    width: 33.333%;
+  } 
+
+  @include media-query($desktop) {
+    width: 25%;
+    padding: 0 spacing(tight);
+    margin-bottom: spacing();
+  }
+}
+
+// ADD POPUP SCSS HERE IF NEEDED
